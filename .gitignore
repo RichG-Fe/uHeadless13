@@ -2,3 +2,5 @@
 *.vsidx
 
 *.v2
+
+src/Umbraco/.vs/uHeadless13/v17/.suo
