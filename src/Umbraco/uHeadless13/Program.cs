@@ -1,13 +1,18 @@
+using Nikcio.UHeadless.Extensions;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
     .AddWebsite()
+    .AddUHeadless()
     .AddDeliveryApi()
     .AddComposers()
     .Build();
 
 WebApplication app = builder.Build();
+
+app.MapUHeadlessGraphQLEndpoint();
 
 await app.BootUmbracoAsync();
 
